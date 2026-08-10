@@ -25,7 +25,7 @@ O projeto foi desenvolvido de maneira colaborativa, reunindo profissionais respo
 
 Acesse a landing page:
 
-[Visualizar o Creator Academy](LINK-DO-GITHUB-PAGES)
+[Visualizar o Creator Academy](https://fmu-content.s3.us-east-1.amazonaws.com/FMU/EAD/CREATOR_ACADEMY/LP-CreatorAcademy/index.html)
 
 ## Tecnologias utilizadas
 
