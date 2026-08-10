@@ -1,0 +1,2446 @@
+/* ==================================================
+   CREATOR ACADEMY — FOLHA DE ESTILOS PRINCIPAL
+   Arquivo separado do HTML sem alteração intencional
+   no design, conteúdo, funcionalidade ou responsividade.
+================================================== */
+
+/* ==================================================
+   1. VARIÁVEIS GLOBAIS
+   Centraliza cores, fonte, gradientes, sombras, bordas e medidas reutilizadas em todo o site.
+================================================== */
+
+/* Modifica as variáveis CSS globais disponíveis em todo o documento na área "Variáveis Globais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+:root {
+  --bg: #050508;
+  --text: #ffffff;
+  --muted: #c7c9d3;
+  --line: rgba(255,255,255,.12);
+  --red: #ff003d;
+  --magenta: #ff2bd6;
+  --purple: #7b2cff;
+  --blue: #2667ff;
+  --cyan: #00e5ff;
+  --orange: #ff6b2c;
+  --green: #39d67a;
+  --gradient: linear-gradient(135deg, var(--red) 0%, var(--magenta) 44%, var(--purple) 68%, var(--cyan) 100%);
+  --gradient-warm: linear-gradient(135deg, var(--blue) 0%, var(--purple) 52%, var(--orange) 100%);
+  --glow: 0 0 34px rgba(255,43,214,.18), 0 0 60px rgba(0,229,255,.10);
+  --container: 1180px;
+  --radius-lg: 20px;
+  --font-primary: "Inter", Arial, sans-serif;
+  --section: clamp(76px, 8vw, 112px);
+}
+
+/* ==================================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+   Normaliza o comportamento dos elementos e define a base visual da página.
+================================================== */
+
+/* Modifica todos os elementos da página na área "Reset E Configurações Gerais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+/* Modifica o elemento raiz HTML na área "Reset E Configurações Gerais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+}
+
+/* Modifica o corpo completo da página na área "Reset E Configurações Gerais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* Modifica os elementos correspondentes ao seletor `body::before` na área "Reset E Configurações Gerais", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.5) 52%, transparent 100%);
+}
+
+/* Modifica os elementos correspondentes ao seletor `body::after` na área "Reset E Configurações Gerais", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(circle at 12% 10%, rgba(255,0,61,.10), transparent 30%),
+        radial-gradient(circle at 84% 20%, rgba(0,229,255,.08), transparent 32%),
+        radial-gradient(circle at 52% 82%, rgba(255,43,214,.08), transparent 34%);
+}
+
+/* ==================================================
+   3. TIPOGRAFIA E ACESSIBILIDADE
+   Padroniza textos, títulos, mídia e recursos de navegação acessível.
+================================================== */
+
+/* Modifica o corpo da página e os controles de formulário na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+body, button, input, textarea, select {
+  font-family: var(--font-primary);
+}
+
+/* Modifica todos os links da página na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Modifica todos os botões da página na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+button {
+  font: inherit;
+}
+
+/* Modifica imagens, ícones SVG, vídeos e iframes na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+img, svg, video, iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* Modifica os títulos de níveis 1, 2 e 3 na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+h1, h2, h3 {
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+/* Modifica todos os parágrafos na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+p {
+  color: var(--muted);
+}
+
+/* Modifica todas as listas não ordenadas na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+ul {
+  list-style: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.sr-only` na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.skip-link` na área "Tipografia E Acessibilidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 2000;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+  transform: translateY(-150%);
+  transition: transform .2s ease;
+}
+
+/* ==================================================
+   4. CONTAINER E ESTRUTURA COMPARTILHADA
+   Controla largura, espaçamento e cabeçalhos usados por várias seções.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.container` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.section` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.section {
+  position: relative;
+  padding: var(--section) 0;
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.section.alt` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.section.alt {
+  background: linear-gradient(180deg, rgba(15,17,27,.92), rgba(7,8,13,.95));
+  border-block: 1px solid rgba(255,255,255,.055);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.section-header` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.section-header {
+  max-width: 800px;
+  margin: 0 auto clamp(34px, 5vw, 58px);
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.section-header h2` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.section-header h2 {
+  font-size: clamp(2rem, 4.2vw, 3.9rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.section-header p` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.section-header p {
+  max-width: 720px;
+  margin: 16px auto 0;
+  font-size: clamp(.98rem, 1.4vw, 1.12rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.eyebrow` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 7px 13px;
+  border: 1px solid rgba(255,43,214,.34);
+  border-radius: 999px;
+  background: rgba(255,43,214,.09);
+  color: #ffd8f8;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.eyebrow::before` na área "Container E Estrutura Compartilhada", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gradient);
+  box-shadow: 0 0 16px rgba(255,43,214,.8);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.highlight` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.highlight {
+  background: linear-gradient(100deg, #ff5a5f, #ca36ec 48%, #00dff7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.section-note` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.section-note {
+  margin-top: 42px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ==================================================
+   5. CABEÇALHO
+   Define o cabeçalho fixo e sua aparência durante a rolagem.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.header` na área "Cabeçalho", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  padding: 10px 0;
+  background: rgba(5,5,8,.68);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: .25s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.header.scrolled` na área "Cabeçalho", ajustando o estado aplicado após a rolagem da página. */
+
+.header.scrolled {
+  padding: 6px 0;
+  background: rgba(5,5,8,.95);
+  border-color: rgba(255,43,214,.22);
+}
+
+/* ==================================================
+   6. MENU DE NAVEGAÇÃO E MARCA
+   Organiza a marca, o menu principal e seus links.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.nav` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.brand` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.brand-mark` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.brand-mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gradient-warm);
+  box-shadow: 0 0 20px rgba(123,44,255,.35);
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.brand-mark::after` na área "Menu De Navegação E Marca", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 8px 2px 8px 13px;
+  border-radius: 50%;
+  background: #07101a;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.nav-links` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.nav-links a:not(.btn)` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.nav-links a:not(.btn) {
+  color: var(--muted);
+  font-size: .84rem;
+  font-weight: 700;
+  transition: .2s;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.footer .brand` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.footer .brand {
+  margin-bottom: 14px;
+}
+
+/* ==================================================
+   7. BOTÕES
+   Define os botões principais, variações e tamanhos.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.btn` na área "Botões", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.btn-primary` na área "Botões", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--red), var(--magenta));
+  box-shadow: 0 12px 28px rgba(255,0,61,.26);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.btn-small` na área "Botões", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.btn-small {
+  min-height: 40px;
+  padding: 8px 15px;
+  font-size: .72rem;
+}
+
+/* ==================================================
+   8. SEÇÃO PRINCIPAL / HERO
+   Controla a apresentação inicial, textos, composição gráfica e informações rápidas.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.hero` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 118px 0 64px;
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero::before` na área "Seção Principal / Hero", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 660px;
+  height: 660px;
+  right: -180px;
+  top: -160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,43,214,.16), transparent 60%);
+  filter: blur(12px);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-grid` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+  align-items: center;
+  gap: clamp(38px, 7vw, 84px);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-copy` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-copy {
+  max-width: 720px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero h1` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.65rem, 5.7vw, 5.9rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-subtitle` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-subtitle {
+  margin-bottom: 18px;
+  color: #f1f2f7;
+  font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-copy p + p` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-copy p + p {
+  margin-top: 14px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero .btn` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero .btn {
+  margin-top: 30px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-art` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-art {
+  position: relative;
+  min-height: 490px;
+  display: grid;
+  place-items: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-orbit` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-orbit {
+  position: relative;
+  width: min(460px, 100%);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(from 70deg, rgba(255,0,61,.44), rgba(255,43,214,.34), rgba(0,229,255,.3), rgba(255,0,61,.44));
+  box-shadow: var(--glow);
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-orbit::before` na área "Seção Principal / Hero", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.hero-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, rgba(255,43,214,.32), transparent 34%), radial-gradient(circle at 68% 67%, rgba(0,229,255,.2), transparent 38%), #080b12;
+  border: 1px solid rgba(0,229,255,.24);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-orbit::after` na área "Seção Principal / Hero", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.hero-orbit::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,.18);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-panel` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-panel {
+  position: relative;
+  z-index: 2;
+  width: 68%;
+  aspect-ratio: 1.18;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  background: radial-gradient(circle at 12% 8%, rgba(0,229,255,.75), transparent 20%), radial-gradient(circle at 88% 78%, rgba(255,92,30,.82), transparent 32%), linear-gradient(135deg, #075cff 0%, #3826d8 48%, #ff2f65 100%);
+  box-shadow: 0 30px 70px rgba(0,0,0,.42);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-panel::before` na área "Seção Principal / Hero", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.45) 1px, transparent 1.4px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(120deg, #000, transparent 38%, transparent 62%, #000);
+  opacity: .35;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-panel::after` na área "Seção Principal / Hero", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: 18% -20% -40% 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.3);
+  box-shadow: 0 0 0 24px rgba(255,255,255,.025), 0 0 0 50px rgba(255,255,255,.02);
+  transform: rotate(-14deg);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.urgency-note` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.urgency-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255,107,44,.42);
+  border-radius: 999px;
+  background: rgba(255,107,44,.09);
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.urgency-note::before` na área "Seção Principal / Hero", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.urgency-note::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 14px rgba(255,107,44,.72);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-trust` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.hero-trust span` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.hero-trust span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.045);
+  color: #f3f4f8;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+/* ==================================================
+   9. SEÇÃO INFORMAÇÕES PRÁTICAS
+   Organiza os cards, indicadores e avisos exibidos antes do conteúdo principal.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.practical-grid` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.practical-card` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.practical-card {
+  min-height: 180px;
+  padding: 26px 22px;
+  text-align: center;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.practical-icon` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.practical-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(38,103,255,.26), rgba(255,43,214,.22));
+  border: 1px solid rgba(255,255,255,.12);
+  font-size: 1.3rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.practical-card strong` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.practical-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.practical-card p` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.practical-card p {
+  font-size: .88rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.proof-strip` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 38px auto 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.proof-item` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.proof-item {
+  padding: 24px 18px;
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.proof-number` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.proof-number {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.proof-label` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.proof-label {
+  display: block;
+  margin-top: 8px;
+  color: #f2f3f7;
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.validation-note` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.validation-note {
+  max-width: 820px;
+  margin: 20px auto 0;
+  color: #ffd9a8;
+  font-size: .76rem;
+  text-align: center;
+}
+
+/* ==================================================
+   10. CARDS E COMPONENTES COMPARTILHADOS
+   Define componentes reutilizados em diferentes seções da página.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.glass-card` na área "Cards E Componentes Compartilhados", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.glass-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,.078), rgba(255,255,255,.035));
+  box-shadow: 0 18px 52px rgba(0,0,0,.22);
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.glass-card::before` na área "Cards E Componentes Compartilhados", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top left, rgba(255,43,214,.14), transparent 42%), radial-gradient(circle at bottom right, rgba(0,229,255,.09), transparent 44%);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.glass-card > *` na área "Cards E Componentes Compartilhados", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.glass-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.card-icon` na área "Cards E Componentes Compartilhados", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.card-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border: 1px solid rgba(0,229,255,.34);
+  border-radius: 12px;
+  background: rgba(255,255,255,.07);
+  color: #fff;
+  box-shadow: inset 0 0 14px rgba(255,43,214,.08), 0 0 16px rgba(0,229,255,.12);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.card-icon svg` na área "Cards E Componentes Compartilhados", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.card-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.list-card` na área "Cards E Componentes Compartilhados", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.list-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 68px;
+  padding: 16px 18px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.list-card p` na área "Cards E Componentes Compartilhados", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.list-card p {
+  color: #f1f2f7;
+  font-size: .9rem;
+}
+
+/* ==================================================
+   11. SEÇÃO O MERCADO MUDOU
+   Organiza a introdução, a grade e os cards relacionados ao mercado.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.market-intro` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-intro {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 36px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-intro h2` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-intro h2 {
+  font-size: clamp(2rem, 4.2vw, 3.8rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-intro .lead` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-intro .lead {
+  margin-top: 10px;
+  color: #55a7ff;
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-intro p:last-child` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-intro p:last-child {
+  margin: 22px auto 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-grid` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-card` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-card {
+  min-height: 104px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-card p` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-card p {
+  color: #eef0f6;
+  font-size: .92rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-bottom` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-bottom {
+  margin-top: 38px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.market-bottom strong` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.market-bottom strong {
+  color: #fff;
+}
+
+/* ==================================================
+   12. SEÇÃO O QUE É A CREATOR ACADEMY
+   Controla o conteúdo em colunas, a citação e o vídeo de apresentação.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.two-column-copy` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.two-column-copy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(28px, 6vw, 72px);
+  align-items: start;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.copy-block p + p` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.copy-block p + p {
+  margin-top: 18px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quote-card` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quote-card {
+  margin-top: 22px;
+  padding: 24px 26px;
+  border-color: rgba(38,103,255,.45);
+  background: linear-gradient(135deg, rgba(38,103,255,.11), rgba(123,44,255,.11));
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quote-card p` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quote-card p {
+  color: #fff;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.media-block` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.media-block {
+  width: min(100%, 920px);
+  margin: clamp(34px, 5vw, 54px) auto 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.media-title` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.media-title {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  letter-spacing: -.02em;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.video-placeholder, .image-placeholder` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.video-placeholder, .image-placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  overflow: hidden;
+  border: 1px dashed rgba(255,255,255,.28);
+  background: radial-gradient(circle at 18% 18%, rgba(0,229,255,.16), transparent 32%),
+        radial-gradient(circle at 82% 78%, rgba(255,43,214,.18), transparent 34%),
+        rgba(255,255,255,.035);
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.video-placeholder` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.video-placeholder {
+  aspect-ratio: 16 / 9;
+  min-height: 260px;
+  padding: clamp(24px, 5vw, 48px);
+}
+
+/* ==================================================
+   13. SEÇÃO FMU + PLAYNEST
+   Organiza o texto da parceria e o espaço de imagem associado.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.partner-section` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.partner-section {
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.partner-copy` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.partner-copy {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.partner-copy p + p` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.partner-copy p + p {
+  margin-top: 20px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.image-placeholder` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.image-placeholder {
+  aspect-ratio: 4 / 3;
+  min-height: 300px;
+  padding: clamp(24px, 4vw, 40px);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.placeholder-content` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.placeholder-content {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  max-width: 420px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.placeholder-icon` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.placeholder-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.07);
+  font-size: 1.25rem;
+  box-shadow: 0 0 24px rgba(0,229,255,.12);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.placeholder-content strong` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.placeholder-content strong {
+  color: #fff;
+  font-size: clamp(.98rem, 1.8vw, 1.2rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.placeholder-content small` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.placeholder-content small {
+  color: var(--muted);
+  font-size: clamp(.76rem, 1.2vw, .88rem);
+  line-height: 1.5;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.content-media` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.content-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  gap: clamp(30px, 6vw, 72px);
+  align-items: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.content-media--image-left` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.content-media--image-left {
+  grid-template-columns: minmax(320px, .9fr) minmax(0, 1.1fr);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.content-media .partner-copy` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.content-media .partner-copy {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+
+/* ==================================================
+   14. SEÇÃO ESPECIALISTAS
+   Define a grade, fotos, funções e informações dos especialistas.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.faculty-grid` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faculty-card` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faculty-card {
+  padding: 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faculty-photo` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faculty-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border: 1px dashed rgba(255,255,255,.24);
+  border-radius: 18px;
+  background: radial-gradient(circle at 30% 20%, rgba(0,229,255,.2), transparent 28%), radial-gradient(circle at 70% 80%, rgba(255,43,214,.24), transparent 32%), rgba(255,255,255,.035);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faculty-photo span` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faculty-photo span {
+  max-width: 180px;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faculty-role` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faculty-role {
+  margin-top: 6px;
+  color: var(--cyan);
+  font-size: .8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faculty-card p` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faculty-card p {
+  margin-top: 14px;
+  font-size: .88rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.card-status` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.card-status {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255,107,44,.12);
+  color: #ffd6bf;
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+/* ==================================================
+   15. SEÇÃO POR QUE APRENDER A CRIAR CONTEÚDO
+   Organiza a grade de competências e sua observação final.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.skill-grid` na área "Seção Por Que Aprender A Criar Conteúdo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.skill-card` na área "Seção Por Que Aprender A Criar Conteúdo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 68px;
+  padding: 16px 18px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.skill-card p` na área "Seção Por Que Aprender A Criar Conteúdo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.skill-card p {
+  color: #f4f5f8;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.check` na área "Seção Por Que Aprender A Criar Conteúdo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.check {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  box-shadow: 0 0 18px rgba(38,103,255,.24);
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+/* ==================================================
+   16. SEÇÃO O QUE VOCÊ VAI APRENDER
+   Define a grade curricular, cards, títulos e listas de conteúdos.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.curriculum-grid` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.curriculum-card` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.curriculum-card {
+  min-height: 280px;
+  padding: 24px 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.curriculum-card h3` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.curriculum-card h3 {
+  min-height: 50px;
+  margin-bottom: 18px;
+  font-size: 1.02rem;
+  letter-spacing: -.015em;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.curriculum-card li` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.curriculum-card li {
+  position: relative;
+  padding-left: 14px;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.48;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.curriculum-card li + li` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.curriculum-card li + li {
+  margin-top: 9px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.curriculum-card li::before` na área "Seção O Que Você Vai Aprender", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.curriculum-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(255,107,44,.5);
+}
+
+/* ==================================================
+   17. SEÇÃO APRENDA FAZENDO
+   Controla a faixa em degradê e seus textos centrais.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-band` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.gradient-band {
+  position: relative;
+  padding: 82px 0;
+  background: linear-gradient(120deg, #175dff 0%, #5a36f6 46%, #9e18ff 76%, #ff5f45 130%);
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-band::before` na área "Seção Aprenda Fazendo", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.gradient-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 15%, rgba(255,255,255,.12), transparent 30%), linear-gradient(170deg, transparent 54%, rgba(255,255,255,.07) 55%, transparent 72%);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-content` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.gradient-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-content h2` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.gradient-content h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-content .sub` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.gradient-content .sub {
+  margin-top: 8px;
+  color: rgba(255,255,255,.82);
+  font-size: 1.05rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-content p` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.gradient-content p {
+  margin: 22px auto 0;
+  color: #fff;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.gradient-content strong` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.gradient-content strong {
+  color: #fff;
+}
+
+/* ==================================================
+   18. SEÇÃO DEPOIMENTOS
+   Organiza o carrossel, seus cards, controles e indicadores.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-shell` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-shell {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-viewport` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-viewport {
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-track` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-track {
+  display: flex;
+  transition: transform .55s cubic-bezier(.22,.61,.36,1);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-slide` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 4px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-card` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-card {
+  min-height: 320px;
+  padding: clamp(28px, 5vw, 52px);
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-quote` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-quote {
+  color: #fff;
+  font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-person` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-person {
+  margin-top: 24px;
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-meta` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-meta {
+  margin-top: 3px;
+  font-size: .82rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-controls` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.carousel-btn` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.carousel-btn {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50%;
+  background: rgba(255,255,255,.055);
+  color: #fff;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-dots` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-dots {
+  display: flex;
+  gap: 7px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-dot` na área "Seção Depoimentos", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.testimonial-dot {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.22);
+  cursor: pointer;
+}
+
+/* ==================================================
+   19. SEÇÃO PARA QUEM É
+   Define a grade de perfis, ícones e chamada complementar.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.target-grid, .difference-grid, .career-grid` na área "Seção Para Quem É", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.target-grid, .difference-grid, .career-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px 18px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.bolt` na área "Seção Para Quem É", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.bolt {
+  color: var(--cyan);
+  font-size: 1.15rem;
+  text-shadow: 0 0 12px rgba(0,229,255,.5);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.target-callout` na área "Seção Para Quem É", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.target-callout {
+  max-width: 960px;
+  margin: 34px auto 0;
+  padding: 24px;
+  text-align: center;
+  border-color: rgba(255,107,44,.45);
+  background: linear-gradient(135deg, rgba(255,107,44,.08), rgba(255,43,214,.06));
+}
+
+/* Modifica os elementos correspondentes ao seletor `.target-callout strong` na área "Seção Para Quem É", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.target-callout strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+/* ==================================================
+   20. SEÇÃO COMUNIDADE
+   Organiza textos, benefícios e mosaico da comunidade.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.community-grid` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(28px, 6vw, 68px);
+  align-items: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-points` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-points {
+  display: grid;
+  gap: 13px;
+  margin-top: 24px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-point` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-point {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-point span` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-point span {
+  color: var(--green);
+  font-weight: 900;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-mosaic` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-tile` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-tile {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-tile:nth-child(2), .community-tile:nth-child(3)` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-tile:nth-child(2), .community-tile:nth-child(3) {
+  transform: translateY(18px);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.community-tile strong` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.community-tile strong {
+  color: #fff;
+}
+
+/* ==================================================
+   21. SEÇÃO DIFERENCIAIS
+   Define a grade e os cards com diferenciais da formação.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.difference-grid` na área "Seção Diferenciais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.difference-grid {
+  max-width: 1120px;
+  gap: 14px 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.difference-card` na área "Seção Diferenciais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.difference-card {
+  min-height: 70px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.spark` na área "Seção Diferenciais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.spark {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  box-shadow: 0 0 18px rgba(123,44,255,.32);
+  color: #ffd452;
+  font-size: .9rem;
+}
+
+/* ==================================================
+   22. SEÇÃO IMPACTO NA CARREIRA
+   Organiza a imagem, a lista de impactos e a observação final.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.career-grid` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.career-grid {
+  max-width: 920px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.career-card .trend` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.career-card .trend {
+  color: var(--green);
+  font-size: 1rem;
+  text-shadow: 0 0 12px rgba(57,214,122,.28);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.career-note` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.career-note {
+  margin-top: 44px;
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.career-content` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.career-content {
+  min-width: 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.career-content .career-grid` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.career-content .career-grid {
+  grid-template-columns: 1fr;
+  max-width: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.career-content .career-note` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.career-content .career-note {
+  margin-top: 28px;
+  text-align: left;
+}
+
+/* ==================================================
+   23. SEÇÃO JORNADA
+   Controla a linha do tempo visual das dez semanas.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.journey` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.journey {
+  padding-bottom: 56px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.week-track` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.week-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 22px 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.week-track::before` na área "Seção Jornada", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.week-track::before {
+  content: "";
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 25px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,43,214,.7), rgba(0,229,255,.7), transparent);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.week-step` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.week-step {
+  position: relative;
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.week-number` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.week-number {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 13px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--purple), var(--magenta));
+  border: 2px solid rgba(255,255,255,.18);
+  box-shadow: 0 0 22px rgba(123,44,255,.25);
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.week-step p` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.week-step p {
+  max-width: 190px;
+  margin: 0 auto;
+  color: #eceef5;
+  font-size: .8rem;
+}
+
+/* ==================================================
+   24. SEÇÃO QUIZ
+   Define o quiz interativo, opções, progresso e resultado.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-shell` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-shell {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(26px, 5vw, 48px);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-progress` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-progress {
+  height: 8px;
+  margin: 22px 0 30px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-progress span` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-progress span {
+  display: block;
+  width: 25%;
+  height: 100%;
+  background: var(--gradient);
+  transition: width .35s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-question` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-question {
+  color: #fff;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 800;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-options` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-option` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-option {
+  min-height: 58px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-result` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-result {
+  display: none;
+  padding-top: 6px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-result h3` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-result h3 {
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-result p` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-result p {
+  margin-top: 14px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-reset` na área "Seção Quiz", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.quiz-reset {
+  margin-top: 22px;
+}
+
+/* ==================================================
+   25. SEÇÃO GARANTIA E TRANSPARÊNCIA
+   Organiza o aviso de condições, ícone e textos jurídicos.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.guarantee-card` na área "Seção Garantia E Transparência", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.guarantee-card {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 48px);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+  border-color: rgba(57,214,122,.36);
+  background: linear-gradient(135deg, rgba(57,214,122,.08), rgba(0,229,255,.07));
+}
+
+/* Modifica os elementos correspondentes ao seletor `.guarantee-icon` na área "Seção Garantia E Transparência", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.guarantee-icon {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(57,214,122,.25), rgba(0,229,255,.2));
+  font-size: 1.8rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.guarantee-card h3` na área "Seção Garantia E Transparência", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.guarantee-card h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.guarantee-card p` na área "Seção Garantia E Transparência", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.guarantee-card p {
+  margin-top: 10px;
+}
+
+/* ==================================================
+   26. SEÇÃO PERGUNTAS FREQUENTES
+   Define a lista expansível de perguntas e respostas.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.faq-list` na área "Seção Perguntas Frequentes", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faq-item` na área "Seção Perguntas Frequentes", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faq-item summary` na área "Seção Perguntas Frequentes", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faq-item summary {
+  position: relative;
+  padding: 20px 54px 20px 22px;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faq-item summary::-webkit-details-marker` na área "Seção Perguntas Frequentes", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faq-item summary::after` na área "Seção Perguntas Frequentes", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cyan);
+  font-size: 1.4rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faq-answer` na área "Seção Perguntas Frequentes", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.faq-answer {
+  padding: 0 22px 22px;
+}
+
+/* ==================================================
+   27. FAIXA FINAL E CTA DE INSCRIÇÃO
+   Controla a mensagem final, o vídeo de inscrição e a chamada para ação.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.future-band` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.future-band {
+  position: relative;
+  padding: 62px 0;
+  background: linear-gradient(120deg, #445dff 0%, #652dff 44%, #a619ff 75%, #ef6d60 120%);
+  overflow: hidden;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.future-band::after` na área "Faixa Final E Cta De Inscrição", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.future-band::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -58%;
+  height: 85%;
+  background: rgba(255,255,255,.06);
+  transform: rotate(-7deg);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.future-content` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.future-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.future-content h2` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.future-content h2 {
+  font-size: clamp(1.9rem, 4vw, 3.35rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.future-content p` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.future-content p {
+  color: #fff;
+  margin: 18px auto 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.future-content strong` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.future-content strong {
+  color: #fff;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start h2` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start .sub` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start .sub {
+  margin-top: 10px;
+  font-size: 1.08rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start-points` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start-points {
+  display: grid;
+  gap: 12px;
+  max-width: 620px;
+  margin: 28px auto 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start-points p` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start-points p {
+  color: #f2f3f8;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start .btn` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start .btn {
+  margin-top: 28px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.start .availability` na área "Faixa Final E Cta De Inscrição", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.start .availability {
+  margin-top: 18px;
+  color: #ffd9a8;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+/* ==================================================
+   28. RODAPÉ
+   Organiza marca, parceria, contato, divisória e direitos autorais.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `.footer` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.footer {
+  position: relative;
+  padding: 54px 0 26px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: radial-gradient(circle at 48% -20%, rgba(255,43,214,.18), transparent 38%), radial-gradient(circle at 72% 0%, rgba(0,229,255,.08), transparent 32%), #040407;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.footer-grid` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .7fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.footer h3` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.footer h3 {
+  margin-bottom: 14px;
+  font-size: .95rem;
+  letter-spacing: 0;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.footer p` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.footer p {
+  font-size: .88rem;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.footer-divider` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.footer-divider {
+  height: 1px;
+  margin: 30px 0 20px;
+  background: linear-gradient(90deg, transparent, rgba(255,43,214,.44), rgba(0,229,255,.44), transparent);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.copyright` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.copyright {
+  text-align: center;
+  color: rgba(255,255,255,.56);
+  font-size: .8rem;
+}
+
+/* ==================================================
+   29. ANIMAÇÕES, ESTADOS E INTERAÇÕES
+   Define animações, revelação, foco, hover, estados ativos e botão de retorno ao topo.
+================================================== */
+
+/* Modifica os elementos correspondentes ao seletor `[data-reveal]` na área "Animações, Estados E Interações", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+/* Modifica os elementos correspondentes ao seletor `[data-reveal].visible` na área "Animações, Estados E Interações", ajustando o estado em que o componente fica visível. */
+
+[data-reveal].visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.back-top` na área "Animações, Estados E Interações", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+.back-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 900;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0,229,255,.3);
+  border-radius: 50%;
+  background: rgba(6,9,15,.86);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(0,229,255,.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: .25s;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.back-top.show` na área "Animações, Estados E Interações", ajustando o estado em que o componente fica visível. */
+
+.back-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.skip-link:focus` na área "Animações, Estados E Interações", ajustando o estado de foco usado na navegação por teclado. */
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Modifica os elementos correspondentes ao seletor `:focus-visible` na área "Animações, Estados E Interações", ajustando o estado de foco usado na navegação por teclado. */
+
+:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.nav-links a:not(.btn):hover` na área "Animações, Estados E Interações", ajustando o estado visual exibido quando o usuário passa o cursor. */
+
+.nav-links a:not(.btn):hover {
+  color: var(--cyan);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.btn-primary:hover` na área "Animações, Estados E Interações", ajustando o estado visual exibido quando o usuário passa o cursor. */
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(255,0,61,.36), 0 0 24px rgba(255,43,214,.18);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.practical-card:hover, .glass-card:hover` na área "Animações, Estados E Interações", ajustando o estado visual exibido quando o usuário passa o cursor. */
+
+.practical-card:hover, .glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,229,255,.28);
+  box-shadow: 0 24px 56px rgba(0,0,0,.3), 0 0 24px rgba(0,229,255,.08);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.carousel-btn:hover` na área "Animações, Estados E Interações", ajustando o estado visual exibido quando o usuário passa o cursor. */
+
+.carousel-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.testimonial-dot.active` na área "Animações, Estados E Interações", ajustando o estado ativo do componente. */
+
+.testimonial-dot.active {
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(0,229,255,.55);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-option:hover` na área "Animações, Estados E Interações", ajustando o estado visual exibido quando o usuário passa o cursor. */
+
+.quiz-option:hover {
+  transform: translateY(-2px);
+  border-color: var(--cyan);
+  background: rgba(0,229,255,.07);
+}
+
+/* Modifica os elementos correspondentes ao seletor `.quiz-result.show` na área "Animações, Estados E Interações", ajustando o estado em que o componente fica visível. */
+
+.quiz-result.show {
+  display: block;
+}
+
+/* Modifica os elementos correspondentes ao seletor `.faq-item[open] summary::after` na área "Animações, Estados E Interações", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+/* Define as animações utilizadas pelos elementos flutuantes e indicadores pulsantes. */
+
+@keyframes float {
+  /* Modifica o estágio `0%,100%` da animação `float`, definindo a transformação e a opacidade aplicadas nesse momento. */
+  0%,100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  /* Modifica o estágio `50%` da animação `float`, definindo a transformação e a opacidade aplicadas nesse momento. */
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulse {
+  /* Modifica o estágio `0%,100%` da animação `pulse`, definindo a transformação e a opacidade aplicadas nesse momento. */
+  0%,100% {
+    transform: scale(1);
+    opacity: .75;
+  }
+  /* Modifica o estágio `50%` da animação `pulse`, definindo a transformação e a opacidade aplicadas nesse momento. */
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+/* ==================================================
+   30. RESPONSIVIDADE PARA TABLET E TELAS INTERMEDIÁRIAS
+   Ajusta o layout para telas com largura máxima de 1040px.
+================================================== */
+
+@media (max-width: 1040px) {
+
+  /* Em telas de até 1040px, modifica os elementos correspondentes ao seletor `.curriculum-grid` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .curriculum-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  /* Em telas de até 1040px, modifica os elementos correspondentes ao seletor `.hero-grid` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Em telas de até 1040px, modifica os elementos correspondentes ao seletor `.hero-copy` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero-copy {
+    margin: 0 auto;
+  }
+
+  /* Em telas de até 1040px, modifica os elementos correspondentes ao seletor `.hero-art` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero-art {
+    min-height: 400px;
+  }
+
+}
+
+/* ==================================================
+   30. RESPONSIVIDADE PARA TABLET E TELAS INTERMEDIÁRIAS
+   Ajusta o layout para telas com largura máxima de 980px.
+================================================== */
+
+@media (max-width: 980px) {
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.practical-grid` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .practical-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.content-media, .content-media--image-left` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .content-media, .content-media--image-left {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.content-media .image-placeholder` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .content-media .image-placeholder {
+    width: min(100%, 680px);
+    margin-inline: auto;
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.content-media .partner-copy` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .content-media .partner-copy {
+    text-align: center;
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.career-content .career-note` na área "Seção Impacto Na Carreira", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .career-content .career-note {
+    text-align: center;
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.faculty-grid` na área "Seção Especialistas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.community-grid` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.week-track` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .week-track {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  /* Em telas de até 980px, modifica os elementos correspondentes ao seletor `.week-track::before` na área "Seção Jornada", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+  .week-track::before {
+    display: none;
+  }
+
+}
+
+/* ==================================================
+   30. RESPONSIVIDADE PARA TABLET E TELAS INTERMEDIÁRIAS
+   Ajusta o layout para telas com largura máxima de 860px.
+================================================== */
+
+@media (max-width: 860px) {
+
+  /* Em telas de até 860px, modifica os elementos correspondentes ao seletor `.nav-links li:not(:last-child)` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .nav-links li:not(:last-child) {
+    display: none;
+  }
+
+  /* Em telas de até 860px, modifica os elementos correspondentes ao seletor `.market-grid` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .market-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Em telas de até 860px, modifica os elementos correspondentes ao seletor `.two-column-copy` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .two-column-copy {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 860px, modifica os elementos correspondentes ao seletor `.footer-grid` na área "Rodapé", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Em telas de até 860px, modifica os elementos correspondentes ao seletor `.footer .brand` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .footer .brand {
+    justify-content: center;
+  }
+
+}
+
+/* ==================================================
+   31. RESPONSIVIDADE PARA CELULAR
+   Ajusta o layout para telas com largura máxima de 640px.
+================================================== */
+
+@media (max-width: 640px) {
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.container` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.section` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .section {
+    padding: 66px 0;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.hero` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero {
+    padding-top: 102px;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.hero-art` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero-art {
+    min-height: 330px;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.market-grid, .skill-grid, .target-grid, .difference-grid, .career-grid, .curriculum-grid` na área "Seção O Mercado Mudou", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .market-grid, .skill-grid, .target-grid, .difference-grid, .career-grid, .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.curriculum-card` na área "Seção O Que Você Vai Aprender", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .curriculum-card {
+    min-height: 0;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.gradient-band` na área "Seção Aprenda Fazendo", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .gradient-band {
+    padding: 66px 0;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.btn` na área "Botões", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .btn {
+    width: 100%;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.brand-text` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .brand-text {
+    display: none;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.practical-grid, .proof-strip, .quiz-options` na área "Seção Informações Práticas", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .practical-grid, .proof-strip, .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.video-placeholder` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .video-placeholder {
+    min-height: 0;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.image-placeholder` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .image-placeholder {
+    min-height: 230px;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.media-block` na área "Seção O Que É A Creator Academy", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .media-block {
+    margin-top: 30px;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.placeholder-icon` na área "Seção Fmu + Playnest", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .placeholder-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.nav .btn` na área "Menu De Navegação E Marca", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .nav .btn {
+    width: auto;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.header .container` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .header .container {
+    width: min(100% - 20px, var(--container));
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.hero h1` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.7rem);
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.hero-subtitle` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.section-header h2, .market-intro h2, .start h2` na área "Container E Estrutura Compartilhada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .section-header h2, .market-intro h2, .start h2 {
+    font-size: clamp(1.85rem, 9vw, 2.65rem);
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.hero-trust` na área "Seção Principal / Hero", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.community-mosaic` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .community-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.community-tile:nth-child(2), .community-tile:nth-child(3)` na área "Seção Comunidade", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .community-tile:nth-child(2), .community-tile:nth-child(3) {
+    transform: none;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.week-track` na área "Seção Jornada", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .week-track {
+    grid-template-columns: 1fr;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.guarantee-card` na área "Seção Garantia E Transparência", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .guarantee-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Em telas de até 640px, modifica os elementos correspondentes ao seletor `.guarantee-icon` na área "Seção Garantia E Transparência", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  .guarantee-icon {
+    margin: 0 auto;
+  }
+
+}
+
+/* ==================================================
+   32. ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   Desativa movimentos prolongados quando o usuário solicita menos animações no sistema.
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Quando a preferência de movimento reduzido está ativa, modifica o elemento raiz HTML na área "Reset E Configurações Gerais", definindo sua estrutura, dimensões, espaçamentos e aparência visual. */
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Quando a preferência de movimento reduzido está ativa, modifica os elementos correspondentes ao seletor `*, *::before, *::after` na área "Reset E Configurações Gerais", criando ou ajustando um elemento decorativo gerado pelo CSS. */
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+}
