@@ -1,71 +1,55 @@
 # Creator Academy | FMU + PlayNest
 
-Landing page institucional criada para apresentar o **Creator Academy**, curso realizado por meio de uma parceria entre o **Centro Universitário FMU** e a **PlayNest**.
+Landing page do **Creator Academy**, curso de criação de conteúdo digital realizado em parceria entre o **Centro Universitário FMU | FIAM-FAAM** e a **PlayNest**.
 
-## Sobre o projeto
-
-O Creator Academy é uma iniciativa voltada à formação e ao desenvolvimento de novos criadores. Esta landing page reúne as principais informações sobre o curso, seus conteúdos, diferenciais e formas de participação.
-
-O projeto foi desenvolvido de maneira colaborativa, reunindo profissionais responsáveis pelo desenvolvimento da interface, estrutura técnica e demais etapas da solução.
-
-## Funcionalidades
-
-* Apresentação institucional do Creator Academy
-* Informações sobre a parceria entre FMU e PlayNest
-* Exposição dos conteúdos e diferenciais do curso
-* Seções organizadas para facilitar a navegação
-* Chamada para inscrição ou participação
-* Interface adaptada para diferentes tamanhos de tela
-
-## Preview
+**[Ver a página no ar](https://fmu-content.s3.us-east-1.amazonaws.com/FMU/EAD/CREATOR_ACADEMY/LP-CreatorAcademy/index.html)**
 
 ![Preview da landing page do Creator Academy](assets/preview.png)
 
-## Demonstração
+## Sobre o projeto
 
-Acesse a landing page:
+A página apresenta o curso para os estudantes: o que é, para quem serve, o que se aprende, quem ensina e como se inscrever. Ela conduz o visitante por uma sequência de seções, do contexto de mercado até a chamada para inscrição.
 
-[Visualizar o Creator Academy](https://fmu-content.s3.us-east-1.amazonaws.com/FMU/EAD/CREATOR_ACADEMY/LP-CreatorAcademy/index.html)
+## Meu papel
 
-## Tecnologias utilizadas
+Fui responsável pelo desenvolvimento front-end: estrutura em HTML, estilos, responsividade e as interações da página.
 
-### Front-end
+## Destaques
 
-* HTML5
-* CSS3
+- **Quiz "Descubra seu perfil criador".** Perguntas em sequência com barra de progresso e resultado ao final, escrito em JavaScript puro.
+- **Vídeos que reagem à rolagem.** Os players só tocam quando estão visíveis na tela e pausam quando o visitante sai da área.
+- **Animações de entrada.** As seções aparecem conforme a rolagem, com `IntersectionObserver`, e os indicadores numéricos contam até o valor final.
+- **Jornada em 7 passos e perguntas frequentes.** Conteúdo longo organizado em etapas e em blocos que abrem e fecham.
+- **Layout responsivo.** Quatro pontos de quebra, de telas largas até celulares.
+- **Acessibilidade.** Link para pular direto ao conteúdo, rótulos `aria` nos elementos interativos e animações desativadas para quem configura o sistema com `prefers-reduced-motion`.
+- **SEO.** Dados estruturados em JSON-LD (schema.org) para descrever o curso aos buscadores.
 
-### Desenvolvimento e publicação
+## Tecnologias
 
-* Git
-* GitHub
-* AWS S3 (hospedagem)
+- **HTML5** semântico
+- **CSS3**, com variáveis para cores e espaçamentos
+- **JavaScript** puro, sem bibliotecas
+- **Cloudflare Stream** para os vídeos de apresentação
+- **AWS S3** para a hospedagem
 
 ## Como executar localmente
 
-Clone o repositório:
-
 ```bash
 git clone https://github.com/jemacieldev/LP-CREATORACADEMY.git
-```
-
-Entre na pasta do projeto:
-
-```bash
 cd LP-CREATORACADEMY
 ```
 
-Abra o arquivo `index.html` no navegador ou utilize a extensão **Live Server** no Visual Studio Code.
+Abra o arquivo `index.html` no navegador ou use a extensão **Live Server** no Visual Studio Code.
 
 ## Estrutura do projeto
 
 ```text
 LP-CREATORACADEMY/
 ├── assets/
-│   └── preview.png
-├── icons/
-├── index.html
-├── style.css
-├── .gitignore
+│   └── preview.png     imagem de capa deste README
+├── icons/              imagens usadas na página
+├── index.html          estrutura e scripts da página
+├── style.css           estilos
 └── README.md
 ```
 
@@ -76,14 +60,9 @@ LP-CREATORACADEMY/
 | Jessica Maciel da Silva | Desenvolvimento Front-end |
 | Kamis Hora              | Desenvolvimento Back-end  |
 
-## Instituições parceiras
-
-* Centro Universitário FMU
-* PlayNest
-
 ## Créditos
 
-Projeto desenvolvido colaborativamente para a apresentação institucional do **Creator Academy**.
+Projeto desenvolvido colaborativamente para a apresentação institucional do **Creator Academy**, uma parceria entre o Centro Universitário FMU | FIAM-FAAM e a PlayNest.
 
 As marcas, logotipos e demais elementos institucionais mencionados pertencem aos seus respectivos titulares.
 
