@@ -86,3 +86,5 @@ LP-CREATORACADEMY/
 Projeto desenvolvido colaborativamente para a apresentação institucional do **Creator Academy**.
 
 As marcas, logotipos e demais elementos institucionais mencionados pertencem aos seus respectivos titulares.
+
+Os vídeos da página não fazem parte deste repositório: são carregados diretamente da hospedagem oficial do projeto.
