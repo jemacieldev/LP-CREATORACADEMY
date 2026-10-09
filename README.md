@@ -38,20 +38,20 @@ Acesse a landing page:
 
 * Git
 * GitHub
-* GitHub Pages
+* AWS S3 (hospedagem)
 
 ## Como executar localmente
 
 Clone o repositório:
 
 ```bash
-git clone https://github.com/jemacieldev/LP-INSTITUCIONAL.git
+git clone https://github.com/jemacieldev/LP-CREATORACADEMY.git
 ```
 
 Entre na pasta do projeto:
 
 ```bash
-cd LP-INSTITUCIONAL
+cd LP-CREATORACADEMY
 ```
 
 Abra o arquivo `index.html` no navegador ou utilize a extensão **Live Server** no Visual Studio Code.
@@ -59,7 +59,7 @@ Abra o arquivo `index.html` no navegador ou utilize a extensão **Live Server** 
 ## Estrutura do projeto
 
 ```text
-LP-INSTITUCIONAL/
+LP-CREATORACADEMY/
 ├── assets/
 │   └── preview.png
 ├── icons/
